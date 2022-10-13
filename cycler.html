@@ -96,25 +96,19 @@ integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6
 		</div>
 		<script>
 			/*Implementing swap function as part of bonus*/
-        function swap() {
-            let cyclerItems = document.getElementsByClassName("cycler");
-            let temp1 = Math.random() *  cyclerItems.length;
-            let target_class =  document.getElementById("target");
-            let temp2 = Math.random() *  cyclerItems.length;
-
-        	let fElement = document.getElementsByClassName("cycler")[Math.floor(temp1)];
-            let sElement = document.getElementsByClassName("cycler")[Math.floor(temp2)];
-            
-            // console.log(Items.length);
-            
-            if(cyclerItems.length > 1) {
-               // console.log("Print if this loop is executed");
-                let swap = fElement.innerHTML;
-                fElement.innerHTML = sElement.innerHTML;
-                console.log(fElement.innerHTML)
-                sElement.innerHTML = swap;
+			function swap() {
+                let cyclerItems = document.getElementsByClassName("cycler")
+                let container = document.getElementById("target")
+                let a = Math.floor(Math.random() * cyclerItems.length)
+                let b = Math.floor(Math.random() * cyclerItems.length)
+                let firstInnerText = document.getElementsByClassName("cycler")[a]
+                let secondInnerText = document.getElementsByClassName("cycler")[b]
+                if(cyclerItems.length > 1) {
+                    let temp = firstInnerText.innerHTML
+                    firstInnerText.innerHTML = secondInnerText.innerHTML
+                    secondInnerText.innerHTML = temp
+                }
             }
-        }
 		</script>
 </body>
 </html>	

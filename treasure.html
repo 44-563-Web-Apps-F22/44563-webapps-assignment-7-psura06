@@ -26,6 +26,9 @@
         <div class="p-2 bg-danger flex-fill" id="help">Help report</div>
     </div>
 </div>
+<div class = "container text-center">
+    <button class="btn btn-success" type="submit" onclick="resetgame()">Reset Game</button>
+</div>
 <!-- Part 3: The goal is to have a 5 by 5 display of images.-->
 <div class="container">
     <div class="row">
@@ -190,26 +193,22 @@
         
          <!--Bonus: generate random values.-->
          <script>
-            function attemptsReset() {
-                treasureLocation = Math.floor(Math.random() * 24);
-                // console.log(treasureLocation);
-                while(treasureLocation == 12) {
-                    treasureLocation = Math.floor(Math.random() * 24);
-                }
-    
-            chestCount = 0;
-            score = 0;
-    
-            document.getElementById("chests").innerHTML = "Number of chests checked is zero";
-            document.getElementById("score").innerHTML = "Score is unknown";
-            document.getElementById("help").innerHTML = "Help report";
-    
-            for(var val = 0; val < 24; val++) {
-                if(val != 12) {
-                    document.getElementById(ids[val]).src = "Open_Treasure_Chest.jpg";
-                }
+            function resetgame() {
+        treasureLocation = Math.floor(Math.random() * 24)
+        while(treasureLocation == 12) {
+            treasureLocation = Math.floor(Math.random() * 24)
+        }
+        chestCount = 0
+        score = 0
+        document.getElementById("chests").innerHTML = "Number of chests checked is zero"
+        document.getElementById("score").innerHTML = "Score is unknown"
+        document.getElementById("help").innerHTML = "Help report"
+        for(let i = 0; i < 24; i++) {
+            if(i != 12) {
+                document.getElementById(ids[i]).src = "Open_Treasure_Chest.jpg"
             }
-            }
+        }
+    }
         </script>
 </body>
 </html>
