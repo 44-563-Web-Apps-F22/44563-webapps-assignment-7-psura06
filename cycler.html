@@ -67,5 +67,31 @@ integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6
 				container.appendChild(element)
 			}
 		</script>
+		<!-- Part 8: Implement Get and Spin.--> 
+		<script>
+			function get() {
+				let cyclerItems = document.getElementsByClassName("cycler")
+				if(cyclerItems.length > 0) {
+					cyclerItems[cyclerItems.length-1].remove()
+				}
+			}
+	
+			function spin() {
+				let cyclerItems = document.getElementsByClassName("cycler")
+				if(cyclerItems.length > 1) {
+					removedItem = cyclerItems[cyclerItems.length-1]
+					cyclerItems[cyclerItems.length-1].remove()
+					let container = document.getElementById("target")
+					container.insertBefore(removedItem, container.firstChild)
+				}
+			}
+		</script>
+		<div class="container">
+			<ul class="pager">
+				<li class="next">
+					<a href="treasure.html"> Treasure hunt</a>
+				</li>
+			</ul>
+		</div>
 </body>
 </html>	
