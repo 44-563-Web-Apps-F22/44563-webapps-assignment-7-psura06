@@ -177,14 +177,39 @@
             }
         }
     </script>
-    <div class="container">
-        <ul class="pager">
+        <div class="container">
+            <ul class="pager">
             <li class="previous">
                 <a href="reaction.html">Reaction Page</a>
             </li>
             <li class="next">
                 <a href="cycler.html">Cycler Page</a>
             </li>
-        </ul>
+            </ul>
+        </div>
+        
+         <!--Bonus: generate random values.-->
+         <script>
+            function attemptsReset() {
+                treasureLocation = Math.floor(Math.random() * 24);
+                // console.log(treasureLocation);
+                while(treasureLocation == 12) {
+                    treasureLocation = Math.floor(Math.random() * 24);
+                }
+    
+            chestCount = 0;
+            score = 0;
+    
+            document.getElementById("chests").innerHTML = "Number of chests checked is zero";
+            document.getElementById("score").innerHTML = "Score is unknown";
+            document.getElementById("help").innerHTML = "Help report";
+    
+            for(var val = 0; val < 24; val++) {
+                if(val != 12) {
+                    document.getElementById(ids[val]).src = "Open_Treasure_Chest.jpg";
+                }
+            }
+            }
+        </script>
 </body>
 </html>
